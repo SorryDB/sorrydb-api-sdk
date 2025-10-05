@@ -26,6 +26,13 @@ class TestDefaultApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_add_sorry_sorries_post(self) -> None:
+        """Test case for add_sorry_sorries_post
+
+        Add Sorry
+        """
+        pass
+
     def test_get_agent_challenges_agents_agent_id_challenges_get(self) -> None:
         """Test case for get_agent_challenges_agents_agent_id_challenges_get
 

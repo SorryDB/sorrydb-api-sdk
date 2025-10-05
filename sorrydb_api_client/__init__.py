@@ -33,8 +33,14 @@ __all__ = [
     "ChallengeRead",
     "ChallengeStatus",
     "ChallengeSubmissionCreate",
+    "DebugInfo",
     "HTTPValidationError",
+    "Location",
+    "Metadata",
+    "RepoInfo",
     "SQLSorry",
+    "Sorries",
+    "Sorry",
     "ValidationError",
     "ValidationErrorLocInner",
 ]
@@ -59,7 +65,14 @@ from sorrydb_api_client.models.agent_read import AgentRead as AgentRead
 from sorrydb_api_client.models.challenge_read import ChallengeRead as ChallengeRead
 from sorrydb_api_client.models.challenge_status import ChallengeStatus as ChallengeStatus
 from sorrydb_api_client.models.challenge_submission_create import ChallengeSubmissionCreate as ChallengeSubmissionCreate
+from sorrydb_api_client.models.debug_info import DebugInfo as DebugInfo
 from sorrydb_api_client.models.http_validation_error import HTTPValidationError as HTTPValidationError
+from sorrydb_api_client.models.location import Location as Location
+from sorrydb_api_client.models.metadata import Metadata as Metadata
+from sorrydb_api_client.models.repo_info import RepoInfo as RepoInfo
 from sorrydb_api_client.models.sql_sorry import SQLSorry as SQLSorry
+from sorrydb_api_client.models.sorries import Sorries as Sorries
+from sorrydb_api_client.models.sorry import Sorry as Sorry
 from sorrydb_api_client.models.validation_error import ValidationError as ValidationError
 from sorrydb_api_client.models.validation_error_loc_inner import ValidationErrorLocInner as ValidationErrorLocInner
+

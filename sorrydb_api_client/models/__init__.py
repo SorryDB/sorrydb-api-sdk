@@ -12,14 +12,20 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from sorrydb_api_client.models.agent_create import AgentCreate
 from sorrydb_api_client.models.agent_read import AgentRead
 from sorrydb_api_client.models.challenge_read import ChallengeRead
 from sorrydb_api_client.models.challenge_status import ChallengeStatus
 from sorrydb_api_client.models.challenge_submission_create import ChallengeSubmissionCreate
+from sorrydb_api_client.models.debug_info import DebugInfo
 from sorrydb_api_client.models.http_validation_error import HTTPValidationError
+from sorrydb_api_client.models.location import Location
+from sorrydb_api_client.models.metadata import Metadata
+from sorrydb_api_client.models.repo_info import RepoInfo
 from sorrydb_api_client.models.sql_sorry import SQLSorry
+from sorrydb_api_client.models.sorries import Sorries
+from sorrydb_api_client.models.sorry import Sorry
 from sorrydb_api_client.models.validation_error import ValidationError
 from sorrydb_api_client.models.validation_error_loc_inner import ValidationErrorLocInner
+
