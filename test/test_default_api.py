@@ -33,6 +33,13 @@ class TestDefaultApi(unittest.TestCase):
         """
         pass
 
+    def test_get_agent_agents_agent_id_get(self) -> None:
+        """Test case for get_agent_agents_agent_id_get
+
+        Get Agent
+        """
+        pass
+
     def test_get_agent_challenges_agents_agent_id_challenges_get(self) -> None:
         """Test case for get_agent_challenges_agents_agent_id_challenges_get
 

@@ -26,6 +26,9 @@ from sorrydb_api_client.models.repo_info import RepoInfo
 from sorrydb_api_client.models.sql_sorry import SQLSorry
 from sorrydb_api_client.models.sorries import Sorries
 from sorrydb_api_client.models.sorry import Sorry
+from sorrydb_api_client.models.token import Token
+from sorrydb_api_client.models.user_create import UserCreate
+from sorrydb_api_client.models.user_read import UserRead
 from sorrydb_api_client.models.validation_error import ValidationError
 from sorrydb_api_client.models.validation_error_loc_inner import ValidationErrorLocInner
 

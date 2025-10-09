@@ -61,21 +61,26 @@ configuration = sorrydb_api_client.Configuration(
     host = "http://localhost"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+configuration.access_token = os.environ["ACCESS_TOKEN"]
 
 
 # Enter a context with an instance of the API client
 with sorrydb_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = sorrydb_api_client.DefaultApi(api_client)
-    sorries = sorrydb_api_client.Sorries() # Sorries | 
+    api_instance = sorrydb_api_client.AuthApi(api_client)
 
     try:
-        # Add Sorry
-        api_response = api_instance.add_sorry_sorries_post(sorries)
-        print("The response of DefaultApi->add_sorry_sorries_post:\n")
+        # Get Current User Info
+        api_response = api_instance.get_current_user_info_auth_me_get()
+        print("The response of AuthApi->get_current_user_info_auth_me_get:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling DefaultApi->add_sorry_sorries_post: %s\n" % e)
+        print("Exception when calling AuthApi->get_current_user_info_auth_me_get: %s\n" % e)
 
 ```
 
@@ -85,7 +90,11 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AuthApi* | [**get_current_user_info_auth_me_get**](docs/AuthApi.md#get_current_user_info_auth_me_get) | **GET** /auth/me | Get Current User Info
+*AuthApi* | [**login_auth_token_post**](docs/AuthApi.md#login_auth_token_post) | **POST** /auth/token | Login
+*AuthApi* | [**register_auth_register_post**](docs/AuthApi.md#register_auth_register_post) | **POST** /auth/register | Register
 *DefaultApi* | [**add_sorry_sorries_post**](docs/DefaultApi.md#add_sorry_sorries_post) | **POST** /sorries/ | Add Sorry
+*DefaultApi* | [**get_agent_agents_agent_id_get**](docs/DefaultApi.md#get_agent_agents_agent_id_get) | **GET** /agents/{agent_id} | Get Agent
 *DefaultApi* | [**get_agent_challenges_agents_agent_id_challenges_get**](docs/DefaultApi.md#get_agent_challenges_agents_agent_id_challenges_get) | **GET** /agents/{agent_id}/challenges/ | Get Agent Challenges
 *DefaultApi* | [**list_agents_agents_get**](docs/DefaultApi.md#list_agents_agents_get) | **GET** /agents/ | List Agents
 *DefaultApi* | [**register_agent_agents_post**](docs/DefaultApi.md#register_agent_agents_post) | **POST** /agents/ | Register Agent
@@ -108,6 +117,9 @@ Class | Method | HTTP request | Description
  - [SQLSorry](docs/SQLSorry.md)
  - [Sorries](docs/Sorries.md)
  - [Sorry](docs/Sorry.md)
+ - [Token](docs/Token.md)
+ - [UserCreate](docs/UserCreate.md)
+ - [UserRead](docs/UserRead.md)
  - [ValidationError](docs/ValidationError.md)
  - [ValidationErrorLocInner](docs/ValidationErrorLocInner.md)
 
@@ -115,7 +127,15 @@ Class | Method | HTTP request | Description
 <a id="documentation-for-authorization"></a>
 ## Documentation For Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+<a id="OAuth2PasswordBearer"></a>
+### OAuth2PasswordBearer
+
+- **Type**: OAuth
+- **Flow**: password
+- **Authorization URL**: 
+- **Scopes**: N/A
 
 
 ## Author

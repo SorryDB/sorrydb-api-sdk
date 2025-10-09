@@ -18,6 +18,7 @@ __version__ = "1.0.0"
 
 # Define package exports
 __all__ = [
+    "AuthApi",
     "DefaultApi",
     "ApiResponse",
     "ApiClient",
@@ -41,11 +42,15 @@ __all__ = [
     "SQLSorry",
     "Sorries",
     "Sorry",
+    "Token",
+    "UserCreate",
+    "UserRead",
     "ValidationError",
     "ValidationErrorLocInner",
 ]
 
 # import apis into sdk package
+from sorrydb_api_client.api.auth_api import AuthApi as AuthApi
 from sorrydb_api_client.api.default_api import DefaultApi as DefaultApi
 
 # import ApiClient
@@ -73,6 +78,9 @@ from sorrydb_api_client.models.repo_info import RepoInfo as RepoInfo
 from sorrydb_api_client.models.sql_sorry import SQLSorry as SQLSorry
 from sorrydb_api_client.models.sorries import Sorries as Sorries
 from sorrydb_api_client.models.sorry import Sorry as Sorry
+from sorrydb_api_client.models.token import Token as Token
+from sorrydb_api_client.models.user_create import UserCreate as UserCreate
+from sorrydb_api_client.models.user_read import UserRead as UserRead
 from sorrydb_api_client.models.validation_error import ValidationError as ValidationError
 from sorrydb_api_client.models.validation_error_loc_inner import ValidationErrorLocInner as ValidationErrorLocInner
 

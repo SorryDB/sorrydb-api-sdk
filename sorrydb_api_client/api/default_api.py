@@ -317,6 +317,267 @@ class DefaultApi:
 
 
     @validate_call
+    def get_agent_agents_agent_id_get(
+        self,
+        agent_id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> AgentRead:
+        """Get Agent
+
+
+        :param agent_id: (required)
+        :type agent_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_agent_agents_agent_id_get_serialize(
+            agent_id=agent_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AgentRead",
+            '422': "HTTPValidationError",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        ).data
+
+
+    @validate_call
+    def get_agent_agents_agent_id_get_with_http_info(
+        self,
+        agent_id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[AgentRead]:
+        """Get Agent
+
+
+        :param agent_id: (required)
+        :type agent_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_agent_agents_agent_id_get_serialize(
+            agent_id=agent_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AgentRead",
+            '422': "HTTPValidationError",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+        )
+
+
+    @validate_call
+    def get_agent_agents_agent_id_get_without_preload_content(
+        self,
+        agent_id: StrictStr,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Get Agent
+
+
+        :param agent_id: (required)
+        :type agent_id: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_agent_agents_agent_id_get_serialize(
+            agent_id=agent_id,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "AgentRead",
+            '422': "HTTPValidationError",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_agent_agents_agent_id_get_serialize(
+        self,
+        agent_id,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[
+            str, Union[str, bytes, List[str], List[bytes], List[Tuple[str, bytes]]]
+        ] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if agent_id is not None:
+            _path_params['agent_id'] = agent_id
+        # process the query parameters
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        if 'Accept' not in _header_params:
+            _header_params['Accept'] = self.api_client.select_header_accept(
+                [
+                    'application/json'
+                ]
+            )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'OAuth2PasswordBearer'
+        ]
+
+        return self.api_client.param_serialize(
+            method='GET',
+            resource_path='/agents/{agent_id}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
     def get_agent_challenges_agents_agent_id_challenges_get(
         self,
         agent_id: StrictStr,
@@ -337,7 +598,6 @@ class DefaultApi:
     ) -> List[ChallengeRead]:
         """Get Agent Challenges
 
-        Get all challenges for agent with id `agent_id`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -413,7 +673,6 @@ class DefaultApi:
     ) -> ApiResponse[List[ChallengeRead]]:
         """Get Agent Challenges
 
-        Get all challenges for agent with id `agent_id`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -489,7 +748,6 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Get Agent Challenges
 
-        Get all challenges for agent with id `agent_id`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -593,6 +851,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'OAuth2PasswordBearer'
         ]
 
         return self.api_client.param_serialize(
@@ -633,7 +892,6 @@ class DefaultApi:
     ) -> List[AgentRead]:
         """List Agents
 
-        List all agents.
 
         :param skip:
         :type skip: int
@@ -705,7 +963,6 @@ class DefaultApi:
     ) -> ApiResponse[List[AgentRead]]:
         """List Agents
 
-        List all agents.
 
         :param skip:
         :type skip: int
@@ -777,7 +1034,6 @@ class DefaultApi:
     ) -> RESTResponseType:
         """List Agents
 
-        List all agents.
 
         :param skip:
         :type skip: int
@@ -875,6 +1131,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'OAuth2PasswordBearer'
         ]
 
         return self.api_client.param_serialize(
@@ -914,7 +1171,6 @@ class DefaultApi:
     ) -> AgentRead:
         """Register Agent
 
-        Register an new agent to compete on the SorryDB Leaderboard.
 
         :param agent_create: (required)
         :type agent_create: AgentCreate
@@ -982,7 +1238,6 @@ class DefaultApi:
     ) -> ApiResponse[AgentRead]:
         """Register Agent
 
-        Register an new agent to compete on the SorryDB Leaderboard.
 
         :param agent_create: (required)
         :type agent_create: AgentCreate
@@ -1050,7 +1305,6 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Register Agent
 
-        Register an new agent to compete on the SorryDB Leaderboard.
 
         :param agent_create: (required)
         :type agent_create: AgentCreate
@@ -1151,6 +1405,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'OAuth2PasswordBearer'
         ]
 
         return self.api_client.param_serialize(
@@ -1190,7 +1445,6 @@ class DefaultApi:
     ) -> ChallengeRead:
         """Request Sorry Challenge
 
-        Request a new sorry challenge for agent with id `agent_id`.  Returns a `sorry` to try and solve and a `deadline`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -1258,7 +1512,6 @@ class DefaultApi:
     ) -> ApiResponse[ChallengeRead]:
         """Request Sorry Challenge
 
-        Request a new sorry challenge for agent with id `agent_id`.  Returns a `sorry` to try and solve and a `deadline`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -1326,7 +1579,6 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Request Sorry Challenge
 
-        Request a new sorry challenge for agent with id `agent_id`.  Returns a `sorry` to try and solve and a `deadline`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -1414,6 +1666,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'OAuth2PasswordBearer'
         ]
 
         return self.api_client.param_serialize(
@@ -1455,7 +1708,6 @@ class DefaultApi:
     ) -> ChallengeRead:
         """Submit Proof
 
-        Submit a `proof` for a challenge with id `challenge_id`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -1531,7 +1783,6 @@ class DefaultApi:
     ) -> ApiResponse[ChallengeRead]:
         """Submit Proof
 
-        Submit a `proof` for a challenge with id `challenge_id`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -1607,7 +1858,6 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Submit Proof
 
-        Submit a `proof` for a challenge with id `challenge_id`.
 
         :param agent_id: (required)
         :type agent_id: str
@@ -1720,6 +1970,7 @@ class DefaultApi:
 
         # authentication setting
         _auth_settings: List[str] = [
+            'OAuth2PasswordBearer'
         ]
 
         return self.api_client.param_serialize(
