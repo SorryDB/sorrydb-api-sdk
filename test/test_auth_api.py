@@ -26,6 +26,13 @@ class TestAuthApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_change_password_auth_change_password_post(self) -> None:
+        """Test case for change_password_auth_change_password_post
+
+        Change Password
+        """
+        pass
+
     def test_get_current_user_info_auth_me_get(self) -> None:
         """Test case for get_current_user_info_auth_me_get
 

@@ -73,14 +73,15 @@ configuration.access_token = os.environ["ACCESS_TOKEN"]
 with sorrydb_api_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = sorrydb_api_client.AuthApi(api_client)
+    password_change = sorrydb_api_client.PasswordChange() # PasswordChange | 
 
     try:
-        # Get Current User Info
-        api_response = api_instance.get_current_user_info_auth_me_get()
-        print("The response of AuthApi->get_current_user_info_auth_me_get:\n")
+        # Change Password
+        api_response = api_instance.change_password_auth_change_password_post(password_change)
+        print("The response of AuthApi->change_password_auth_change_password_post:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthApi->get_current_user_info_auth_me_get: %s\n" % e)
+        print("Exception when calling AuthApi->change_password_auth_change_password_post: %s\n" % e)
 
 ```
 
@@ -90,6 +91,7 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AuthApi* | [**change_password_auth_change_password_post**](docs/AuthApi.md#change_password_auth_change_password_post) | **POST** /auth/change-password | Change Password
 *AuthApi* | [**get_current_user_info_auth_me_get**](docs/AuthApi.md#get_current_user_info_auth_me_get) | **GET** /auth/me | Get Current User Info
 *AuthApi* | [**login_auth_token_post**](docs/AuthApi.md#login_auth_token_post) | **POST** /auth/token | Login
 *AuthApi* | [**register_auth_register_post**](docs/AuthApi.md#register_auth_register_post) | **POST** /auth/register | Register
@@ -113,6 +115,7 @@ Class | Method | HTTP request | Description
  - [HTTPValidationError](docs/HTTPValidationError.md)
  - [Location](docs/Location.md)
  - [Metadata](docs/Metadata.md)
+ - [PasswordChange](docs/PasswordChange.md)
  - [RepoInfo](docs/RepoInfo.md)
  - [SQLSorry](docs/SQLSorry.md)
  - [Sorries](docs/Sorries.md)

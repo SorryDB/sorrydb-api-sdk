@@ -22,6 +22,7 @@ from sorrydb_api_client.models.debug_info import DebugInfo
 from sorrydb_api_client.models.http_validation_error import HTTPValidationError
 from sorrydb_api_client.models.location import Location
 from sorrydb_api_client.models.metadata import Metadata
+from sorrydb_api_client.models.password_change import PasswordChange
 from sorrydb_api_client.models.repo_info import RepoInfo
 from sorrydb_api_client.models.sql_sorry import SQLSorry
 from sorrydb_api_client.models.sorries import Sorries

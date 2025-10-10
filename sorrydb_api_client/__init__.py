@@ -38,6 +38,7 @@ __all__ = [
     "HTTPValidationError",
     "Location",
     "Metadata",
+    "PasswordChange",
     "RepoInfo",
     "SQLSorry",
     "Sorries",
@@ -74,6 +75,7 @@ from sorrydb_api_client.models.debug_info import DebugInfo as DebugInfo
 from sorrydb_api_client.models.http_validation_error import HTTPValidationError as HTTPValidationError
 from sorrydb_api_client.models.location import Location as Location
 from sorrydb_api_client.models.metadata import Metadata as Metadata
+from sorrydb_api_client.models.password_change import PasswordChange as PasswordChange
 from sorrydb_api_client.models.repo_info import RepoInfo as RepoInfo
 from sorrydb_api_client.models.sql_sorry import SQLSorry as SQLSorry
 from sorrydb_api_client.models.sorries import Sorries as Sorries
